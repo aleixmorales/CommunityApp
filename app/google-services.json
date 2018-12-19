@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "761862216961",
+    "firebase_url": "https://communityapp-f03de.firebaseio.com",
+    "project_id": "communityapp-f03de",
+    "storage_bucket": "communityapp-f03de.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:761862216961:android:6e2222d42818529d",
+        "android_client_info": {
+          "package_name": "aleix.morales.communityapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "761862216961-spin12i7morpk714r4usl8c4qmrviqgl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "aleix.morales.communityapp",
+            "certificate_hash": "e174fe0e8baadbdc0296376c4750025fbb5dca42"
+          }
+        },
+        {
+          "client_id": "761862216961-1v3fg75s308t1d2rbqvgcdmtaig3gdbj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPMc74sYQhZ-I5nYirc2nQF3Hmb853VAc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "761862216961-1v3fg75s308t1d2rbqvgcdmtaig3gdbj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
