@@ -30,7 +30,7 @@ public class UserActivity extends AppCompatActivity {
             Toast.makeText(this, "No he pogut obrir el fitxer", Toast.LENGTH_SHORT).show();
         } catch (IOException e) {
             // Posem IOException _després_ de FileNotFound perquè IOException engloba tots
-            // els tipus d'errors de Entrada/Sortida (incloent FileNotFound)
+            // els tipus d'errors de Fil/Sortida (incloent FileNotFound)
             Toast.makeText(this, "No he pogut escriure al fitxer", Toast.LENGTH_SHORT).show();
         }
     }
