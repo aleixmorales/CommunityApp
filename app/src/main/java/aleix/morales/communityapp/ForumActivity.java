@@ -1,5 +1,6 @@
 package aleix.morales.communityapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -48,15 +49,25 @@ public class ForumActivity extends AppCompatActivity {
             public void onEvent(QuerySnapshot documentSnapshots, FirebaseFirestoreException e) {
                 fils.clear();
                 for (DocumentSnapshot doc : documentSnapshots) {
-                    String filId = doc.getId();
-
                     Fil fil = doc.toObject(Fil.class);
-
+                    fil.setId(doc.getId());
                     fils.add(fil);
                 }
                 adapter.notifyDataSetChanged();
             }
         });
+    }
+
+    private void onClickFil(int pos) {
+        Fil fil = fils.get(pos);
+        fil.getId();
+    }
+
+    public void onAddClick(View view) {
+        //afegir fil
+        Intent intent = new Intent(this, NewFilActivity.class);
+        startActivity(intent);
+
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
@@ -66,7 +77,13 @@ public class ForumActivity extends AppCompatActivity {
             super(itemView);
             likes_view = itemView.findViewById(R.id.likes_view);
             titol_view = itemView.findViewById(R.id.titol_view);
-            // onClickListener
+            titol_view.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    int pos = getAdapterPosition();
+                    onClickFil(pos);
+                }
+            });
         }
     }
 

@@ -4,6 +4,7 @@ public class Fil {
 
     private String titol;
     private Integer likes;
+    private String id;
 
     Fil() {}
 
@@ -26,8 +27,13 @@ public class Fil {
     public Fil(String titol, int likes){
         this.titol = titol;
         this.likes = likes;
-
-
     }
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 }
