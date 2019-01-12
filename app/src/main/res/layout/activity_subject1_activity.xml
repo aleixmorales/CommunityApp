@@ -9,87 +9,35 @@
     <TextView
         android:id="@+id/TitleView"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="31dp"
         android:gravity="center"
-        android:text="Fòrum Enginyeria Tèrmica"
+        android:text="Grau en Mecànica"
         android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Forum Enginyeria Tèrmica" />
+        tools:text="Grau en Mecànica" />
 
     <View
         android:id="@+id/line1"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_marginTop="5dp"
         android:background="@color/colorPrimary"
         android:visibility="visible"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TitleView" />
-
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/Data_btn"
-        android:layout_width="29dp"
-        android:layout_height="25dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:clickable="true"
-        app:backgroundTint="@android:color/transparent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TitleView"
-        app:srcCompat="@drawable/ic_arrow_drop_down" />
-
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/Like_btn"
-        android:layout_width="0dp"
-        android:layout_height="25dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
-        android:clickable="true"
-        app:backgroundTint="@android:color/transparent"
-        app:layout_constraintEnd_toStartOf="@+id/LikeLabel"
-        app:layout_constraintTop_toBottomOf="@+id/TitleView"
-        app:srcCompat="@drawable/ic_arrow_drop_down" />
-
-    <TextView
-        android:id="@+id/DataLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Ordenar per data"
-        app:layout_constraintStart_toEndOf="@+id/Data_btn"
-        app:layout_constraintTop_toBottomOf="@+id/TitleView"
-        tools:text="Ordenar Per Data" />
-
-    <TextView
-        android:id="@+id/LikeLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:text="Ordenar per likes"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TitleView"
-        tools:text="Ordenar Per Likes" />
+        app:layout_constraintTop_toBottomOf="@+id/posterview" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/LlistaFils"
         android:layout_width="368dp"
         android:layout_height="0dp"
-        android:layout_marginTop="16dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/appbackground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/TitleView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Data_btn"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/line1" />
 
     <Button
         android:id="@+id/button"
@@ -102,5 +50,21 @@
         android:text="+"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/posterview"
+        android:layout_width="0dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TitleView"
+        app:srcCompat="@android:color/holo_orange_light" />
+
+
 
 </android.support.constraint.ConstraintLayout>

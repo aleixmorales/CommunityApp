@@ -19,6 +19,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.text.DateFormat;
@@ -34,6 +35,7 @@ public class FilActivity extends AppCompatActivity {
 
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
 
+    private String filId;
     private List<Resposta> respostes;
 
     private RecyclerView recycler_view;
@@ -68,6 +70,8 @@ public class FilActivity extends AppCompatActivity {
         recycler_view.setLayoutManager(new LinearLayoutManager(this));
         recycler_view.setAdapter(adapter);
 
+        Intent intent = getIntent();
+        filId = intent.getStringExtra("filId");
         /*
         db.collection("fils").document("filtest").addSnapshotListener(new EventListener<DocumentSnapshot>() {
             @Override
@@ -82,7 +86,8 @@ public class FilActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        db.collection("fils").document("filtest").collection("respostes")
+        db.collection("fils").document(filId).collection("respostes")
+                .orderBy("data", Query.Direction.DESCENDING)
                 .addSnapshotListener(this, new EventListener<QuerySnapshot>() {
                     @Override
                     public void onEvent(QuerySnapshot documentSnapshots, FirebaseFirestoreException e) {
@@ -127,7 +132,7 @@ public class FilActivity extends AppCompatActivity {
         }
         // Afegir el nou ítem a la llista
         Resposta resp = new Resposta(nova, username , new Date());
-        db.collection("fils").document("filtest").collection("respostes").add(resp); // .addOnSuccessListener
+        db.collection("fils").document(filId).collection("respostes").add(resp); // .addOnSuccessListener
         // respostes.add(resp);
         // Notificar a l'adaptador dels canvis en el model
         // adapter.notifyItemInserted(respostes.size()-1);
